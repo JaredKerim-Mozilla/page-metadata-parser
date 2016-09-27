@@ -136,6 +136,10 @@ function getMetadata(doc, url, rules) {
     metadata.url = url;
   }
 
+  if(url && !metadata.icon_url) {
+    metadata.icon_url = makeUrlAbsolute(url, '/favicon.ico');
+  }
+
   return metadata;
 }
 
